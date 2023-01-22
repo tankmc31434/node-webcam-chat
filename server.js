@@ -13,6 +13,16 @@ const server = require("http").Server(app);
 const { v4: uuidv4 } = require("uuid");
 
 /**
+ * This line imports the ExpressPeerServer module from the peer library, 
+ * and the next line creates an options object with the debug property 
+ * set to true.
+ */
+const { ExpressPeerServer } = require("peer");
+const opinions = {
+    debug: true,
+}
+
+/**
  * This line sets the view engine for the Express application to EJS, 
  * and the next line imports the Socket.io library 
  * and attaches it to the HTTP server. 
@@ -24,18 +34,6 @@ const io = require("socket.io")(server, {
         origin: '*'
     }
 });
-
-
-/**
- * This line imports the ExpressPeerServer module from the peer library, 
- * and the next line creates an options object with the debug property 
- * set to true.
- */
-const { ExpressPeerServer } = require("peer");
-const opinions = {
-    debug: true,
-}
-
 
 /**
  * These lines mount the ExpressPeerServer middleware on the /peerjs route 
