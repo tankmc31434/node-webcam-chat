@@ -1,6 +1,6 @@
 /*This is a Node.js server-side script that uses
  the Express and Socket.io libraries to create a real-time 
- WebRTC video chat application. */
+ WebRTC video chat application. */         
 
 
  /**
