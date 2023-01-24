@@ -88,7 +88,7 @@ const connectToNewUser = (userId, stream) => {
     addVideoStream(video, userVideoStream);
   });
 };
-/**เป็นฟังค์ชั่นเรียนใช้ ให้แสดงในหน้า html**/
+/**เป็นฟังค์ชั่นเรียนใช้ ให้แสดงในหน้า html**/  
 peer.on("open", (id) => {
   console.log('my id is' + id);
   socket.emit("join-room", ROOM_ID, id, user);
