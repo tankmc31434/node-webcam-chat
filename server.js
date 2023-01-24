@@ -5,7 +5,7 @@
 
  /**
  * บรรทัดเหล่านี้นำเข้าไลบรารี Express และ uuid, 
- * และสร้างอินสแตนซ์ของแอปพลิเคชัน Express และเซิร์ฟเวอร์ HTTP.
+ * และสร้างอินสแตนซ์ของแอปพลิเคชัน Express และเซิร์ฟเวอร์ HTTP.    
  */
 const express = require("express");
 const app = express();
@@ -15,7 +15,8 @@ const { v4: uuidv4 } = require("uuid");
 /**
  * บรรทัดนี้นำเข้าโมดูล ExpressPeerServer จากไลบรารีเพียร์, 
  * และบรรทัดถัดไปสร้างออบเจกต์อ็อพชันที่มีคุณสมบัติการดีบัก 
- * ตั้งค่าเป็นจริง.
+ * ตั้งค่าเป็นจริง    
+ *     
  */
 const { ExpressPeerServer } = require("peer");
 const opinions = {

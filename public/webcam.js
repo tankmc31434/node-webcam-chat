@@ -5,7 +5,7 @@ const showChat = document.querySelector("#showChat");
 const backBtn = document.querySelector(".header__back");
 myVideo.muted = true;  
 
-/****/
+/**เป็นการประกาศตัวแปลเลขใช้งาน**/
 
 backBtn.addEventListener("click", () => {
   document.querySelector(".main__left").style.display = "flex";
@@ -13,14 +13,14 @@ backBtn.addEventListener("click", () => {
   document.querySelector(".main__right").style.display = "none";
   document.querySelector(".header__back").style.display = "none";
 });
-
+/**เป็นการประกาศใช้ตัวแปล */
 showChat.addEventListener("click", () => {
   document.querySelector(".main__right").style.display = "flex";
   document.querySelector(".main__right").style.flex = "1";
   document.querySelector(".main__left").style.display = "none";
   document.querySelector(".header__back").style.display = "block";
 });
-
+/**เป็นการสร้าง การรับชื่อ ผู้ใช้ กรอกผู้ใช้งาน/** */
 const user = prompt("Enter your name");
 
 var peer = new Peer({
@@ -43,6 +43,7 @@ var peer = new Peer({
         username: 'openrelayproject',
         credentials: 'openrelayproject'
       }
+      /**เป็นกรตั้งค่า โฮส พาส ที่ใช้บนคลาว เป็นการตั้งค่า ของ usl/** */
       // {
       //   url: 'turn:192.158.29.39:3478?transport=tcp',
       //   credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
@@ -53,13 +54,14 @@ var peer = new Peer({
 
   debug: 3
 });
-
+/**เป็นการอนุญาติว่าจะให้เปิดกล้องหรือเปิดไมค์หรือไม่**/
 let myVideoStream;
 navigator.mediaDevices
   .getUserMedia({
     audio: true,
     video: true,
   })
+  
   .then((stream) => {
     myVideoStream = stream;
     addVideoStream(myVideo, stream);
@@ -86,7 +88,7 @@ const connectToNewUser = (userId, stream) => {
     addVideoStream(video, userVideoStream);
   });
 };
-
+/**เป็นฟังค์ชั่นเรียนใช้ ให้แสดงในหน้า html**/
 peer.on("open", (id) => {
   console.log('my id is' + id);
   socket.emit("join-room", ROOM_ID, id, user);
